@@ -1,0 +1,44 @@
+
+.users-new-wrapper {
+  height: auto;
+  background-color: rgba(0,100,0,0.5);
+}
+.row {
+  padding: 120px;
+}
+
+.text-white {
+  font-family: ヒラギノ角ゴ Pro W3;
+  text-align: center;
+  // text-color: #000080;
+  font-size: 35px;
+  color: #fff;
+  border: 5px solid;
+  padding-top: 15px;
+  padding-bottom: 15px;
+//   background-color: rgba(0,0,0,0.0);
+  border-radius: 30px;
+  border-color: #565656;
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.btn-block {
+  border-radius: 10px;          /* 角丸       */
+  font-size: 10pt;        /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  // cursor: pointer;     /* カーソル   */
+  padding: 10px 10px;   /* 余白       */
+  // background: rgba(255, 215, 0, 0.5);     /* 背景色     */
+  // color : #ffffff;     /* 文字色     */
+  // line-height: 1em;         /* 1行の高さ  */
+  box-shadow: 6px 6px 3px #666666;  /* 影の設定 */
+  border: 2px solid rgba(102, 102, 255, 0.91);    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow: none;        /* カーソル時の影消去 */
+  color: rgba(255, 215, 0, 0.1);     /* 背景色     */
+  background: #ffffff;     /* 文字色     */
+}
