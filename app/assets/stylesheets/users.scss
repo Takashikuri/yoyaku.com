@@ -26,13 +26,14 @@
 }
 
 .btn-block {
+  font-weight: bolder;
   border-radius: 10px;          /* 角丸       */
   font-size: 10pt;        /* 文字サイズ */
   text-align: center;      /* 文字位置   */
   // cursor: pointer;     /* カーソル   */
   padding: 10px 10px;   /* 余白       */
-  // background: rgba(255, 215, 0, 0.5);     /* 背景色     */
-  // color : #ffffff;     /* 文字色     */
+  background: rgba(255, 215, 0, 0.5);     /* 背景色     */
+  color : #ffffff;     /* 文字色     */
   // line-height: 1em;         /* 1行の高さ  */
   box-shadow: 6px 6px 3px #666666;  /* 影の設定 */
   border: 2px solid rgba(102, 102, 255, 0.91);    /* 枠の指定 */
@@ -41,4 +42,18 @@
   box-shadow: none;        /* カーソル時の影消去 */
   color: rgba(255, 215, 0, 0.1);     /* 背景色     */
   background: #ffffff;     /* 文字色     */
+}
+
+.btn-white {
+  display: block;
+    width:100%;
+    height:100%;
+    background:#8cd460;
+    border:1px solid #FFFFFF;
+    color:#FFFFFF;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:10px;
+    box-shadow:0px 0px 0px 4px #8cd460 ;
+    
 }

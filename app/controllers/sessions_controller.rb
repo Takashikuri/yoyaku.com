@@ -1,15 +1,20 @@
 class SessionsController < ApplicationController
-  # def new
-  #   user = User.new
-  # end
-  # def create
-  #   user = User.new(user_params)
+  def new
+    # user = User.new
+  end
+  def create
+    user = User.find_by(email: session_params[:email])
+    if user && user.authenticate(session_params[:password])
+      redirect_to pages_index_path
+    else
+      render new_user_path
+    end
     
-  # end
+  end
 
 
-# private
-#   def user_params
-#     params.require(:user).permit(:id, :password)
-#   end
+private
+  def session_params
+    params.require(:session).permit(:email, :password)
+  end
 end

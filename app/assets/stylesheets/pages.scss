@@ -1,0 +1,24 @@
+.pages-wrapper {
+  height: 100vh;
+  background-color: rgba(0,100,0,0.5);
+}
+
+.btn-block {
+  margin-top: 20px;
+  font-weight: bolder;
+  border-radius: 50px;          /* 角丸       */
+  font-size: 20pt;        /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  // cursor: pointer;     /* カーソル   */
+  padding: 10px 10px;   /* 余白       */
+  background: rgba(255, 215, 0, 0.5);     /* 背景色     */
+  color : #ffffff;     /* 文字色     */
+  // line-height: 1em;         /* 1行の高さ  */
+  box-shadow: 6px 6px 3px #666666;  /* 影の設定 */
+  border: 2px solid rgba(102, 102, 255, 0.91);    /* 枠の指定 */
+}
+.button:hover {
+  box-shadow: none;        /* カーソル時の影消去 */
+  color: rgba(255, 215, 0, 0.1);     /* 背景色     */
+  background: #ffffff;     /* 文字色     */
+}

@@ -1,0 +1,28 @@
+<table>
+ <thead>
+   <tr>
+    <td>予約登録日</td>
+    <td>予約日時</td>
+    <td>予約名</td>
+    <td>電話番号</td>
+    <td>人数</td>
+    <td>コース名</td>
+    <td>媒体</td>
+    <td>席番号</td>
+   </tr>
+ </thead>
+  <% @reservation.each do |reservation| %>
+ <tbody>
+    <tr>
+      <td><%= reservation.sign_up_day %></td>
+      <td><%= l reservation.reserve_day %></td>
+      <td><%= reservation.reserve_name %></td>
+      <td><%= reservation.reserve_phone_number %></td>
+      <td><%= reservation.member %></td>
+      <td><%= reservation.course %></td>
+      <td><%= reservation.medium %></td>
+      <td><%= reservation.seat_number %></td>
+     </tr>
+ </tbody>
+ <% end %>
+</table>
