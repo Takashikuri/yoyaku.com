@@ -6,7 +6,10 @@
 .container {
   width: 100vw;
 }
-
+.date-container {
+  padding-top: 35px;
+  font-size: 30px;
+}
 
 // .reserve-text {
 //   height: 100vh;
@@ -19,6 +22,14 @@
 //   height: 100vh;
 // }
 
+.contents {
+  text-align: center;
+  background-color: #696969;
+  margin-bottom: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
 table th {
   padding: 10px;
   border: solid;
@@ -27,3 +38,7 @@ table td {
   padding: 10px;
   border: solid;
 }
+.date-container {
+  display: flex;
+}
+

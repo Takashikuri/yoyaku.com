@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: session_params[:email])
     if user && user.authenticate(session_params[:password])
-      redirect_to pages_index_path
+      redirect_to pages_path
     else
       render new_user_path
     end

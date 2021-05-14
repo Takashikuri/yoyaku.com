@@ -37,6 +37,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'rails-i18n'
+gem 'data-confirm-modal'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
+gem 'ransack'
+gem 'devise'
+
 
 
 group :development, :test do
