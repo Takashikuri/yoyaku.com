@@ -43,6 +43,8 @@ gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'ransack'
 gem 'devise'
+gem 'jquery'
+gem 'font-awesome-rails'
 
 
 

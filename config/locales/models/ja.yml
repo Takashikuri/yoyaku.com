@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+      store_name: 店舗名
+      phone_number: 電話番号
+      address: 住所
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード再入力
+            
+              

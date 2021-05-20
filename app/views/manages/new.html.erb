@@ -1,0 +1,54 @@
+<div class="index-wrapper">
+ <div class="index-container">
+   <h2>管理表画面</h2>
+    <div class="row">
+     <div class="col-md-offset-3 col-md-6">
+      <h2>管理表登録</h2>
+      <div class="contents">
+          <%= form_for @manage do |f| %>
+            <div class="form_group col-md-5">
+                <%= f.label :卓番, class: 'text' %>
+                <%= f.select :table_number,[10,11,12,13,14,15,20,21,22,23,24,25,27,30,31,33,34,36,40,41,42,43,44,45,46],{include_blank: '選択'},  class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-offset-2 col-md-5">
+                <%= f.label :人数, class: 'text' %>
+                <%= f.text_field :member, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-5">
+                <%= f.label :開始時間, class: 'text' %>
+                <%= f.time_field :start_time, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-offset-2 col-md-5">
+                <%= f.label :Last時間, class: 'text' %>
+                <%= f.time_field :last_time, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-5">
+                <%= f.label :終了時間, class: 'text' %>
+                <%= f.time_field :finish_time, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-offset-2 col-md-5">
+                <%= f.label :コース名, class: 'text' %>
+                <%= f.select :course, ["Aコース","Bコース","Cコース","飲み放題","F"], {include_blank: '選択してください'}, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-5">
+                <%= f.label :クーポン, class: 'text' %>
+                <%= f.select :coupon,["ホットペッパー","ぐるなび","食べログ","LINE"], {include_blank: '選択してください'}, class: 'form-control' %>
+            </div>
+            <div class="form_group col-md-offset-2 col-md-5">
+                <%= f.label :備考欄, class: 'text' %>
+                <%= f.text_field :remarks, class: 'form-control' %>
+            </div>
+            <div class="btn-area">
+              <div class="col-md-offset-3 col-md-3">
+               <%= f.submit "登録", class: "btn-block" %>
+              </div>
+              <div class="col-md-offset-3 col-md-3">
+                <%= button_tag 'クリア', type:'reset', class: 'btn-block' %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+     </div>
+    </div>
+ </div>
+</div>

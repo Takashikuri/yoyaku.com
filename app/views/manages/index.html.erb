@@ -1,0 +1,58 @@
+<div class="index-wrapper">
+ <div class="index-container">
+   <h2>管理表画面</h2>
+  <div class="row">
+   <div class="col-md-offset-2 col-md-6">
+    
+    <div class="contents">
+     <h1>管理表</h1>
+     </div>
+     <table>
+      <thead>
+        <tr>
+         <td></td>
+         <th>卓番</th>
+         <th>人数</th>
+         <th>開始時間</th>
+         <th>Last時間</th>
+         <th>終了時間</th>
+         <th>コース名</th>
+         <th>備考欄</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+       
+        <% @manages.each do |manage| %>
+        <tr>
+          <td></td>
+          <td><%= manage.table_number %></td>
+          <td><%= manage.member %></td>
+          <td><%= l manage.start_time, format: :normal %></td>
+          <td><%= l manage.last_time, format: :normal %></td>
+          <td><%= l manage.finish_time, format: :normal %></td>
+          <td><%= manage.course %></td>
+          <td><%= manage.coupon %></td>
+          <td><%= manage.remarks %></td>
+          <td><%= link_to "/manages/#{manage.id}/edit" do %>
+           <button type="button" class="btn btn-outline-primary">
+            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 更新
+           </button>
+           <% end %>
+           </td>
+           
+           <td><%= link_to "/manages/#{manage.id}", method:"delete", data: { confirm: '削除しますか？'} do %>
+           <button type="button" class="btn btn-outline-primary">
+             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
+           </button>
+           <% end %>
+           </td>
+           
+        </tr>  
+        <% end %>
+        
+        
+      </tbody>
+  </div>
+ </div>
+</div>

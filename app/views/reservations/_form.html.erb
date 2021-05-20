@@ -4,6 +4,15 @@
     
           <div class="col-md-offset-2 col-md-9 users-new-container">
             <div class="text-white">予約.com</div>
+            <% if @reservation.errors.any? %>
+              <div class="alert-user alert-warning">
+                <ul>
+                  <% @reservation.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
             <div class="form_group col-md-5">
                 <%= f.label :予約登録日, class: 'text' %>
                 <%= f.date_field :sign_up_day, class: 'form-control' %>

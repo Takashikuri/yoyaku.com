@@ -14,10 +14,12 @@ class ReservationsController < ApplicationController
   
   def create
     @reservation = Reservation.new(reservation_params)
-    if @reservation.save
-    redirect_to reservations_path
+   
+    if @reservation.valid? && @reservation.save
+      redirect_to reservations_path, success: '予約の登録が出来ました。'
     else
-    render :new
+      flash.now[:danger] = '予約の登録が出来ませんでした。'
+      render :new
     end
   end
   
