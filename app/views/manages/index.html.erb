@@ -2,8 +2,17 @@
  <div class="index-container">
    <h2>管理表画面</h2>
   <div class="row">
+ 
    <div class="col-md-offset-2 col-md-6">
-    
+     <div class="btn-manage">
+       <%= search_form_for(@q, url: manages_path) do |f| %>
+          <%= f.date_field :created_at_eq, value: Time.now.strftime("%Y-%m-%d") %>
+          <%= f.submit "検索" %>
+       <% end %>
+       <%= button_to '管理登録へ', new_manage_path, method: :get  %>
+        
+     </div>
+     
     <div class="contents">
      <h1>管理表</h1>
      </div>
@@ -11,48 +20,93 @@
       <thead>
         <tr>
          <td></td>
-         <th>卓番</th>
-         <th>人数</th>
-         <th>開始時間</th>
-         <th>Last時間</th>
-         <th>終了時間</th>
-         <th>コース名</th>
+         
+         
+         <th><%= sort_link(@q, :table_number, "卓番") %></th>
+         <th><%= sort_link(@q, :member, "人数") %></th>
+         <th><%= sort_link(@q, :start_time, "開始時間") %></th>
+         <th><%= sort_link(@q, :last_time, "last時間") %></th>
+         <th><%= sort_link(@q, :finish_time, "終了時間") %></th>
+         <th><%= sort_link(@q, :course, "内容") %></th>
+         <th>割引</th>
          <th>備考欄</th>
+         <th>ラスト</th>
+         <th>会計</th>
+         <th>退店</th>
         </tr>
       </thead>
       
       <tbody>
        
         <% @manages.each do |manage| %>
-        <tr>
-          <td></td>
-          <td><%= manage.table_number %></td>
-          <td><%= manage.member %></td>
-          <td><%= l manage.start_time, format: :normal %></td>
-          <td><%= l manage.last_time, format: :normal %></td>
-          <td><%= l manage.finish_time, format: :normal %></td>
-          <td><%= manage.course %></td>
-          <td><%= manage.coupon %></td>
-          <td><%= manage.remarks %></td>
-          <td><%= link_to "/manages/#{manage.id}/edit" do %>
-           <button type="button" class="btn btn-outline-primary">
-            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 更新
-           </button>
-           <% end %>
-           </td>
-           
-           <td><%= link_to "/manages/#{manage.id}", method:"delete", data: { confirm: '削除しますか？'} do %>
-           <button type="button" class="btn btn-outline-primary">
-             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
-           </button>
-           <% end %>
-           </td>
-           
-        </tr>  
+         
+          <tr>
+            <td></td>
+            <td><%= manage.table_number %></td>
+            <td><%= manage.member %></td>
+            <td><%= l manage.start_time, format: :normal %></td>
+            <td>
+              <% if manage.last_time <= Time.now %>
+               <div class="time-yellow"><%= l manage.last_time, format: :normal %></div>
+              <% else %>
+               <div class="time-white"><%= l manage.last_time, format: :normal %></div>
+              <% end %>
+            </td>
+            <td><%= l manage.finish_time, format: :normal %></td>
+            <td><%= manage.course %></td>
+            <td><%= manage.coupon %></td>
+            <td><%= manage.remarks %></td>
+            
+            <td><%= manage.last %></td>
+            <td><%= manage.accounting %></td>
+            <td><%= manage.closed %></td>
+            <td><%= check_box_tag 'manage[last]', true, false %></td>
+          
+            <td><%= link_to "/manages/#{manage.id}/edit" do %>
+             <button type="button" class="btn btn-outline-primary">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 更新
+             </button>
+             <% end %>
+             </td>
+             
+             <td><%= link_to "/manages/#{manage.id}", method:"delete", data: { confirm: '削除しますか？'} do %>
+             <button type="button" class="btn btn-outline-primary">
+               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
+             </button>
+             <% end %>
+             </td>
+          
+          </tr>  
         <% end %>
         
         
       </tbody>
+     </table>
   </div>
+   <div class="col-md-3">
+     <h4>本日の予約</h4>
+       <table>
+         <thead>
+           <tr>
+             <td></td>
+             <th>予約時間</th>
+             <th>予約名</th>
+             <th>予約人数</th>
+             <th>予約内容</th>
+           </tr>
+         </thead>
+         <tbody>
+          <% @res.each do |reservation| %>
+           <tr>
+            <td></td>
+            <td><%= l reservation.reserve_day, format: :normal %></td>
+            <td><%= reservation.reserve_name %></td>
+            <td><%= reservation.member %></td>
+            <td><%= reservation.course %></td>
+           </tr>
+          <% end %>
+         </tbody>
+       </table>
+   </div>
  </div>
 </div>

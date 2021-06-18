@@ -13,14 +13,16 @@ class ReservationsController < ApplicationController
   end
   
   def create
+    
     @reservation = Reservation.new(reservation_params)
    
     if @reservation.valid? && @reservation.save
       redirect_to reservations_path, success: '予約の登録が出来ました。'
     else
-      flash.now[:danger] = '予約の登録が出来ませんでした。'
-      render :new
+      flash[:validation_messages] = @reservation.errors.full_messages
+      redirect_to new_reservation_path
     end
+    
   end
   
   def edit

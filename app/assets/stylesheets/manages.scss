@@ -15,3 +15,14 @@ table > tbody > tr {
 table > tbody > tr > td:first-child::before {
   content: counter(rowCount);
 }
+
+.time-yellow {
+  background-color: yellow;
+}
+.time-white {
+  background-color: white;
+}
+
+.check_true {
+  background-color: yellow;
+}

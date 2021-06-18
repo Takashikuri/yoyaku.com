@@ -74,6 +74,7 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    chronic (0.10.2)
     coderay (1.1.3)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -256,6 +257,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  chronic
   coffee-rails (~> 4.2)
   data-confirm-modal
   devise
@@ -263,7 +265,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery
   jquery-rails
-  listen (>= 3.0.5, < 3.2)
+  listen
   momentjs-rails
   mysql2 (>= 0.4.4, < 0.6.0)
   pry-byebug

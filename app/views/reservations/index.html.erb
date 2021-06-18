@@ -3,7 +3,7 @@
   <div class="col-md-offset-8 date-container">
  
     <%= form_with(url: reservations_path, method: "get", local: true) do |f| %>
-    <%= f.date_field :reserve_day %>
+    <%= f.date_field :reserve_day, value: Time.now.strftime("%Y-%m-%d") %>
     <%= f.submit "検索" %>
     <% end %>
    </div>
@@ -21,6 +21,7 @@
      <table>
       <thead>
         <tr>
+         <td></td>
          <td>予約登録日</td>
          <td>予約日時</td>
          <td>予約名</td>
@@ -34,6 +35,7 @@
        <% @reservations.each do |reservation| %>
       <tbody>
          <tr>
+          <td></td>
            <td><%= reservation.sign_up_day %></td>
            <td><%= l reservation.reserve_day, format: :short %></td>
            <td><%= reservation.reserve_name %></td>

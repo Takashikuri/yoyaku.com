@@ -9,4 +9,5 @@ class Reservation < ApplicationRecord
   validates :course, presence: true
   validates :medium, presence: true
   
+  ransacker :created_at, callable: proc { Arel.sql('DATE(created_at)') }
 end

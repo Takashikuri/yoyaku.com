@@ -11,6 +11,7 @@ module YoyakuCom
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.time_zone = "Asia/Tokyo"
+    config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja ## デフォルトのlocaleを日本語(:ja)にする
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     #複数のローケルファイルが読み込まれるようpathを通した
